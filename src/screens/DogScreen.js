@@ -16,20 +16,23 @@ export default function DogScreen({navigation}){
                 <Text style = {styles.h1}>🐶 Ótimo dia!</Text>
             </View>
             <View>
-                <Text style = {styles.h3}>Como deseja acessar?</Text>
+                <Text style = {styles.h3EmCima}>Como deseja acessar?</Text>
             </View>
             
       
 
     
                         
+                <View style={styles.buttonGroup1}>
+
                     <TouchableOpacity style = {styles.button1} onPress={() => navigation.navigate('CadastroScreen')}>
                         <Image
                             style={styles.google}
                             source={require('../assets/Google.png')}
-                        />
+                            />
                         <Text style= {styles.h3}>Deseja logar em sua conta?</Text> 
                  </TouchableOpacity >
+                            </View>
            <View>
                 <TouchableOpacity style={styles.button2} onPress={() => navigation.navigate('LoginScreen')}>
                     <Text style = {styles.txtbutton2}>Outras opções</Text>
@@ -56,14 +59,26 @@ const styles = StyleSheet.create({
 
         
     },
-
+    google:{
+        marginLeft:30,
+        width:50,
+        height:50
+    },
     h3: {
-        marginLeft: windowWidth * 0,
-        justifyContent: "center",
+        marginRight: windowWidth*0.23,
         alignItems: "center",
         color: "#32404d",
         fontSize: 14,
+        display:'flex'
     },
+    h3EmCima: {
+        marginRight: windowWidth * 0,
+        alignItems: "center",
+        color: "#32404d",
+        fontSize: 14,
+        display:'flex'
+    },
+
 
     dogImage: {
         height: windowWidth * 0.82,
@@ -124,5 +139,7 @@ const styles = StyleSheet.create({
         width: windowWidth * 0.5,
         borderRadius: 5,
     },
-
-});
+    buttonGroup1:{
+        display:'flex',
+    }
+}); 
