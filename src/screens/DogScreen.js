@@ -10,10 +10,10 @@ export default function DogScreen({navigation}){
         <View style= {styles.container}>
           <Image
                 style={styles.dogImage}
-                source={ require('./assets/dog.png') }
+                source={ require('../assets/casual_dog.png') }
             />
             <View>
-                <Text style = {styles.h1}>Ótimo dia!</Text>
+                <Text style = {styles.h1}>🐶 Ótimo dia!</Text>
             </View>
             <View>
                 <Text style = {styles.h3}>Como deseja acessar?</Text>
@@ -22,15 +22,16 @@ export default function DogScreen({navigation}){
       
 
     
-              <TouchableOpacity style = {styles.button1}>
-                     <Image
-                    style={styles.google}
-                     source={require('./assets/Google.png')}
-                    />
-                    <Text style = {styles.txtbutton1}>Como deseja acessar?</Text>
-                 </TouchableOpacity>
+                        
+                    <TouchableOpacity style = {styles.button1} onPress={() => navigation.navigate('CadastroScreen')}>
+                        <Image
+                            style={styles.google}
+                            source={require('../assets/Google.png')}
+                        />
+                        <Text style= {styles.h3}>Deseja logar em sua conta?</Text> 
+                 </TouchableOpacity >
            <View>
-                <TouchableOpacity style={styles.button2}>
+                <TouchableOpacity style={styles.button2} onPress={() => navigation.navigate('LoginScreen')}>
                     <Text style = {styles.txtbutton2}>Outras opções</Text>
                 </TouchableOpacity>
             </View>
@@ -46,16 +47,18 @@ const styles = StyleSheet.create({
     },
 
     h1: {
-        marginLeft: windowWidth * 0.25,
-        justifyContent: "center",
+        marginLeft: windowWidth * 0,
+        justifyContent: "",
         alignItems: "center",
         color: "#32404d",
         fontSize: 40,
         marginBottom: windowWidth * 0.02,
+
+        
     },
 
     h3: {
-        marginLeft: windowWidth * 0.3,
+        marginLeft: windowWidth * 0,
         justifyContent: "center",
         alignItems: "center",
         color: "#32404d",
